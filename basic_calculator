@@ -1,0 +1,31 @@
+def calculator(num1, x, num2):
+    num1 = float(input("Enter the first number: "))
+    x = input("Enter the operation (plus, subtract, divide, multiply): ")
+    num2 = float(input("Enter the second number: "))
+
+#check that input is a number and return error if not
+    try:
+        num1 = float(num1)
+        num2 = float(num2)
+    except ValueError:
+        print('Invalid input, please enter valid numeric values')
+        return
+
+    operations = ['plus', 'subtract', 'divide', 'multiply']
+    if x not in operations:
+        print('Invalid operation. Please choose from:', operations)
+        return
+
+    if x == 'plus':
+        print(num1 + num2)
+    elif x == 'subtract':
+         print(num1 - num2)
+    elif x == 'divide':
+        if num2 != 0:
+            print(num1 / num2)
+        else:
+            print('Cannot divide by zero')
+    elif x == 'multiply':
+        print(num1 * num2)
+
+  
